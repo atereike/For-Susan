@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Susan ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Georgia', serif;
+        background: black;
+        color: #d4af37;
+        overflow: hidden;
+    }
+
+    /* INTRO SCREEN */
+    .intro {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        animation: fadeIn 2s ease-in-out;
+        z-index: 10;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+        opacity: 0;
+        animation: cinematicText 3s forwards;
+    }
+
+    .intro p {
+        margin-top: 20px;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        opacity: 0;
+        animation: cinematicText 3s forwards;
+        animation-delay: 2s;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+        display: none;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(135deg, #000000, #1a1a1a);
+    }
+
+    .container {
+        background: rgba(0, 0, 0, 0.85);
+        padding: 50px;
+        border-radius: 25px;
+        border: 2px solid #d4af37;
+        box-shadow: 0 0 40px rgba(212,175,55,0.5);
+        max-width: 500px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #f5e6b3;
+    }
+
+    .signature {
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        border-radius: 30px;
+        border: none;
+        margin: 15px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    #yesBtn {
+        background: #d4af37;
+        color: black;
+    }
+
+    #yesBtn:hover {
+        background: #f5e6b3;
+    }
+
+    #noBtn {
+        background: #333;
+        color: #d4af37;
+        position: absolute;
+    }
+
+    @keyframes cinematicText {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="intro" onclick="startExperience()">
+    <h1>Some moments change everything...</h1>
+    <p>TAP TO BEGIN</p>
+</div>
+
+<!-- MAIN PROPOSAL -->
+<div class="main" id="mainContent">
+    <div class="container">
+        <h2>Susan ❤️</h2>
+        <p>
+            The last few weeks has been beautiful,<br>
+            we started as 2 strangers,<br>
+	    but we are here now like we have been together for years.<br>
+            I love the way you talk and the big smile that you bring to my face,<br>
+            I want to actively look for every message from you,<br>
+	    I want to alwasy listen to your laugh,<br>
+	    I want to listen to you for the longest,<br>
+	    I want to call you "My Love" without getting a lecture attached to it<br>
+	    I really want to be happy with you in my life<br>
+	    Not just as my friend but as my Girlfriend,Partner<br> 
+            I love you to bits.<br><br>
+            Susan… will you be my GIRLFRIEND?
+        </p>
+
+        <div class="signature">
+            — Asst. Deji of Akure ❤️
+        </div>
+
+        <br>
+
+        <button id="yesBtn" onclick="sayYes()">Yes 💛</button>
+        <button id="noBtn" onmouseover="moveButton()">No 😅</button>
+    </div>
+</div>
+
+<!-- Background Music (Replace link with correct YouTube ID if needed) -->
+<iframe id="musicFrame"
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/1nF4V6XW7xE?enablejsapi=1"
+    frameborder="0"
+    allow="autoplay">
+</iframe>
+
+<script>
+function startExperience() {
+    document.querySelector(".intro").style.display = "none";
+    document.getElementById("mainContent").style.display = "flex";
+
+    const frame = document.getElementById("musicFrame");
+    frame.src += "&autoplay=1";
+}
+
+function sayYes() {
+    document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:black;color:#d4af37;font-family:Georgia;text-align:center;">
+            <div>
+                <h1>She Said YES 💍✨</h1>
+                <p> THANK YOU FOR NOT CHOPPING MY EYE, I LOVE YOU! ❤️</p>
+            </div>
+        </div>
+    `;
+}
+
+function moveButton() {
+    const button = document.getElementById('noBtn');
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+}
+</script>
+
+</body>
+</html>
